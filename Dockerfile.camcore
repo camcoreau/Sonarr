@@ -1,0 +1,7 @@
+FROM lscr.io/linuxserver/sonarr:latest
+
+LABEL org.opencontainers.image.title="CamCore Sonarr"
+LABEL org.opencontainers.image.description="Sonarr with CamCore branding"
+
+COPY frontend/src/Content/Images/logo-full.png /app/sonarr/bin/UI/Content/Images/logo-full.png
+COPY frontend/src/login.html /app/sonarr/bin/UI/login.html
