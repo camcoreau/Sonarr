@@ -10,15 +10,31 @@
 .logoContainer {
   display: flex;
   align-items: center;
+  justify-content: center;
   flex: 0 0 $sidebarWidth;
-  padding-left: 20px;
+  height: 100%;
+  padding: 0 14px;
+  background-color: var(--sidebarBackgroundColor);
 }
 
 .logoLink {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
   line-height: 0;
 }
 
+.logoFull {
+  width: 100%;
+  max-width: 170px;
+  height: 52px;
+  object-fit: contain;
+  object-position: left center;
+}
+
 .logo {
+  display: none;
   width: 32px;
   height: 32px;
 }
@@ -52,6 +68,15 @@
 @media only screen and (max-width: $breakpointSmall) {
   .logoContainer {
     flex: 0 0 60px;
+    padding: 0 14px;
+  }
+
+  .logoFull {
+    display: none;
+  }
+
+  .logo {
+    display: block;
   }
 
   .sidebarToggleContainer {
