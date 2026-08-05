@@ -1,3 +1,5 @@
+/* CSS-module hashes change between upstream runtime releases. */
+/* stylelint-disable selector-max-attribute, selector-attribute-quotes */
 [class*='PageHeader-logoContainer-'] {
   display: flex;
   align-items: center;
@@ -36,3 +38,4 @@
     height: 32px !important;
   }
 }
+/* stylelint-enable selector-max-attribute, selector-attribute-quotes */
