@@ -6,6 +6,8 @@ on:
       - v5-develop
     paths:
       - "frontend/src/Content/Images/logo-full.png"
+      - "frontend/src/Content/Images/Icons/camcore-*"
+      - "frontend/src/Content/camcore-manifest.json"
       - "frontend/src/Content/camcore-header.css"
       - "frontend/src/login.html"
       - "Dockerfile.camcore"
@@ -15,6 +17,8 @@ on:
       - v5-develop
     paths:
       - "frontend/src/Content/Images/logo-full.png"
+      - "frontend/src/Content/Images/Icons/camcore-*"
+      - "frontend/src/Content/camcore-manifest.json"
       - "frontend/src/Content/camcore-header.css"
       - "frontend/src/login.html"
       - "Dockerfile.camcore"
