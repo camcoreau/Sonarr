@@ -5,3 +5,12 @@ LABEL org.opencontainers.image.description="Sonarr with CamCore branding"
 
 COPY frontend/src/Content/Images/logo-full.png /app/sonarr/bin/UI/Content/Images/logo-full.png
 COPY frontend/src/login.html /app/sonarr/bin/UI/login.html
+COPY frontend/src/Content/camcore-header.css /app/sonarr/bin/UI/Content/camcore-header.css
+
+RUN find /app/sonarr/bin/UI -maxdepth 1 -type f -name '*.js' \
+      -exec sed -i \
+        -e 's#/Content/Images/logo\.svg#/Content/Images/logo-full.png#g' \
+        -e 's/alt:"Sonarr Logo"/alt:"CamCore"/g' {} + \
+ && grep -qs '/Content/Images/logo-full.png' /app/sonarr/bin/UI/*.js \
+ && sed -i 's#</head>#<link rel="stylesheet" href="/Content/camcore-header.css" /></head>#' /app/sonarr/bin/UI/index.html \
+ && grep -q 'camcore-header.css' /app/sonarr/bin/UI/index.html
