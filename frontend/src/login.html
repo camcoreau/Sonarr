@@ -81,8 +81,11 @@
       }
 
       .logo {
-        width: 32px;
-        height: 32px;
+        width: 180px;
+        max-width: 100%;
+        height: auto;
+        max-height: 60px;
+        object-fit: contain;
       }
 
       .panel {
@@ -213,7 +216,11 @@
       <div class="content">
         <div class="panel">
           <div class="panel-header">
-            <img src="/Content/Images/logo.svg" alt="Image" class="logo" />
+            <img
+              src="/Content/Images/logo-full.png"
+              alt="CamCore"
+              class="logo"
+            />
           </div>
 
           <div class="panel-body">
