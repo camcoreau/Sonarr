@@ -1,0 +1,22 @@
+{
+  "name": "__INSTANCE_NAME__",
+  "short_name": "CamCore Sonarr",
+  "icons": [
+    {
+      "src": "__URL_BASE__/Content/Images/Icons/camcore-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "__URL_BASE__/Content/Images/Icons/camcore-apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "start_url": "__URL_BASE__/",
+  "theme_color": "#06111f",
+  "background_color": "#06111f",
+  "display": "standalone"
+}
