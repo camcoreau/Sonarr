@@ -3,7 +3,7 @@
 >
 > **CamCore is a privately owned and operated family technology network that delivers secure, reliable and professionally managed digital services for the Cameron household, Cameron-Media and associated family operations.** **Built for Home. Engineered Like Enterprise.**
 >
-> Prefer an immutable `sha-*` image tag, with its resolved digest recorded, over `latest`. Reviewed source, a published image, a deployed image and a verified live service are separate states. Route product questions and reproducible upstream defects upstream after testing without CamCore customisation; CamCore operational support remains private. Never add credentials or private environment details to this public repository.
+> A published `sha-*` tag identifies the source commit, but it is not by itself an immutable image reference while the build uses a mutable base. Record and verify the published image digest, and deploy by digest for an immutable reference; treat `latest` and `sha-*` as discovery labels. Reviewed source, a published image, a deployed image and a verified live service are separate states. Route product questions and reproducible upstream defects upstream after testing without CamCore customisation; CamCore operational support remains private. Never add credentials or private environment details to this public repository.
 
 # <img width="24px" src="./Logo/256.png" alt="Sonarr"></img> Sonarr
 
