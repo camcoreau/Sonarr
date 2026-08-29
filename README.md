@@ -1,3 +1,10 @@
+> [!IMPORTANT]
+> **Unofficial CamCore downstream.** This fork is maintained by CamCore – Cameron Family Secure Network to add CamCore header, login and browser identity assets and to build the branded `ghcr.io/camcoreau/sonarr` container image. It remains a downstream of the [upstream Sonarr project](https://github.com/Sonarr/Sonarr); CamCore is not affiliated with or endorsed by upstream.
+>
+> **CamCore is a privately owned and operated family technology network that delivers secure, reliable and professionally managed digital services for the Cameron household, Cameron-Media and associated family operations.** **Built for Home. Engineered Like Enterprise.**
+>
+> A published `sha-*` tag identifies the source commit, but it is not by itself an immutable image reference while the build uses a mutable base. Record and verify the published image digest, and deploy by digest for an immutable reference; treat `latest` and `sha-*` as discovery labels. Reviewed source, a published image, a deployed image and a verified live service are separate states. Route product questions and reproducible upstream defects upstream after testing without CamCore customisation; CamCore operational support remains private. Never add credentials or private environment details to this public repository.
+
 # <img width="24px" src="./Logo/256.png" alt="Sonarr"></img> Sonarr
 
 [![Translated](https://translate.servarr.com/widget/servarr/sonarr/svg-badge.svg)](https://translate.servarr.com/engage/servarr/)
