@@ -4,32 +4,16 @@ LABEL org.opencontainers.image.title="CamCore Sonarr"
 LABEL org.opencontainers.image.description="Sonarr with CamCore branding"
 
 COPY frontend/src/Content/Images/logo-full.png /app/sonarr/bin/UI/Content/Images/logo-full.png
+COPY frontend/src/Content/Images/camcore-logo.svg /app/sonarr/bin/UI/Content/Images/logo.svg
 COPY frontend/src/login.html /app/sonarr/bin/UI/login.html
 COPY frontend/src/Content/Images/Icons/camcore-icon.svg /app/sonarr/bin/UI/Content/Images/Icons/camcore-icon.svg
+COPY frontend/src/Content/Images/Icons/camcore-icon.svg /app/sonarr/bin/UI/Content/Images/Icons/safari-pinned-tab.svg
 COPY frontend/src/Content/Images/Icons/camcore-apple-touch-icon.png /app/sonarr/bin/UI/Content/Images/Icons/camcore-apple-touch-icon.png
+COPY frontend/src/Content/Images/Icons/camcore-apple-touch-icon.png /app/sonarr/bin/UI/Content/Images/Icons/apple-touch-icon.png
+COPY frontend/src/Content/Images/Icons/camcore-apple-touch-icon.png /app/sonarr/bin/UI/Content/Images/Icons/favicon-32x32.png
+COPY frontend/src/Content/Images/Icons/camcore-apple-touch-icon.png /app/sonarr/bin/UI/Content/Images/Icons/favicon-16x16.png
 COPY frontend/src/Content/camcore-manifest.json /app/sonarr/bin/UI/Content/manifest.json
 COPY frontend/src/Content/camcore-header.css /app/sonarr/bin/UI/Content/camcore-header.css
 
-RUN find /app/sonarr/bin/UI -maxdepth 1 -type f -name '*.js' \
-      -exec sed -i \
-        -e 's#/Content/Images/logo\.svg#/Content/Images/logo-full.png#g' \
-        -e 's/alt:"Sonarr Logo"/alt:"CamCore"/g' {} + \
- && grep -qs '/Content/Images/logo-full.png' /app/sonarr/bin/UI/*.js \
- && sed -i 's#</head>#<link rel="stylesheet" href="/Content/camcore-header.css" /></head>#' /app/sonarr/bin/UI/index.html \
- && grep -q 'camcore-header.css' /app/sonarr/bin/UI/index.html \
- && sed -i \
-      -e 's#/Content/Images/Icons/apple-touch-icon\.png#/Content/Images/Icons/camcore-apple-touch-icon.png#g' \
-      -e 's#/Content/Images/Icons/favicon-32x32\.png#/Content/Images/Icons/camcore-icon.svg#g' \
-      -e 's#/Content/Images/Icons/favicon-16x16\.png#/Content/Images/Icons/camcore-icon.svg#g' \
-      -e 's#/Content/Images/Icons/safari-pinned-tab\.svg#/Content/Images/Icons/camcore-icon.svg#g' \
-      -e 's#href="/favicon\.ico"#href="/Content/Images/Icons/camcore-icon.svg"#g' \
-      -e 's#type="image/ico"#type="image/svg+xml"#g' \
-      -e 's#content="/Content/browserconfig\.xml"#content="none"#g' \
-      /app/sonarr/bin/UI/index.html \
-      /app/sonarr/bin/UI/login.html \
- && grep -q 'camcore-icon.svg' /app/sonarr/bin/UI/index.html \
- && grep -q 'camcore-icon.svg' /app/sonarr/bin/UI/login.html \
- && grep -q 'camcore-icon.svg' /app/sonarr/bin/UI/Content/manifest.json \
- && ! grep -qsE '/Content/Images/Icons/(apple-touch-icon\.png|favicon-(16x16|32x32)\.png|safari-pinned-tab\.svg)|href="/favicon\.ico"|content="/Content/browserconfig\.xml"' \
-      /app/sonarr/bin/UI/index.html \
-      /app/sonarr/bin/UI/login.html
+RUN sed -i 's#</head>#<link rel="stylesheet" href="/Content/camcore-header.css" /></head>#' /app/sonarr/bin/UI/index.html \
+ && grep -q 'camcore-header.css' /app/sonarr/bin/UI/index.html
