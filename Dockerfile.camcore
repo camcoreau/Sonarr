@@ -4,6 +4,7 @@ LABEL org.opencontainers.image.title="CamCore Sonarr"
 LABEL org.opencontainers.image.description="Sonarr with CamCore branding"
 
 COPY frontend/src/Content/Images/logo-full.png /app/sonarr/bin/UI/Content/Images/logo-full.png
+COPY frontend/src/Content/Images/camcore-logo.svg /app/sonarr/bin/UI/Content/Images/camcore-logo.svg
 COPY frontend/src/Content/Images/camcore-logo.svg /app/sonarr/bin/UI/Content/Images/logo.svg
 COPY frontend/src/login.html /app/sonarr/bin/UI/login.html
 COPY frontend/src/Content/Images/Icons/camcore-icon.svg /app/sonarr/bin/UI/Content/Images/Icons/camcore-icon.svg
@@ -15,5 +16,6 @@ COPY frontend/src/Content/Images/Icons/camcore-apple-touch-icon.png /app/sonarr/
 COPY frontend/src/Content/camcore-manifest.json /app/sonarr/bin/UI/Content/manifest.json
 COPY frontend/src/Content/camcore-header.css /app/sonarr/bin/UI/Content/camcore-header.css
 
-RUN sed -i 's#</head>#<link rel="stylesheet" href="/Content/camcore-header.css" /></head>#' /app/sonarr/bin/UI/index.html \
- && grep -q 'camcore-header.css' /app/sonarr/bin/UI/index.html
+RUN sed -i 's#</head>#<link rel="stylesheet" href="/Content/camcore-header.css?v=2026-08-30-authenticated-header" /></head>#' /app/sonarr/bin/UI/index.html \
+ && grep -q 'camcore-header.css?v=2026-08-30-authenticated-header' /app/sonarr/bin/UI/index.html \
+ && test -s /app/sonarr/bin/UI/Content/Images/camcore-logo.svg

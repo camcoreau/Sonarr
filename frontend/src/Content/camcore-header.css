@@ -18,6 +18,20 @@
   line-height: 0;
 }
 
+/* The upstream bundle keeps /logo.svg cached for a long time. Hide its image
+   nodes and render the approved master from a CamCore-specific, versioned URL. */
+[class*='PageHeader-logoLink-'] > img {
+  display: none !important;
+}
+
+[class*='PageHeader-logoLink-']::before {
+  display: block;
+  width: 100%;
+  height: 52px;
+  background: url('./Images/camcore-logo.svg?v=2026-08-30-authenticated-header') left center / contain no-repeat;
+  content: '';
+}
+
 [class*='PageHeader-logo-'] {
   max-width: 170px !important;
   width: 100% !important;
@@ -26,10 +40,28 @@
   object-position: left center;
 }
 
+[class*='PageSidebar-logoLink-'] > img {
+  display: none !important;
+}
+
+[class*='PageSidebar-logoLink-']::before {
+  display: block;
+  width: 32px;
+  height: 32px;
+  background: url('./Images/Icons/camcore-icon.svg?v=2026-08-30-authenticated-header') center / contain no-repeat;
+  content: '';
+}
+
 @media only screen and (max-width: 768px) {
   [class*='PageHeader-logoContainer-'] {
     flex: 0 0 60px !important;
     padding: 0 14px !important;
+  }
+
+  [class*='PageHeader-logoLink-']::before {
+    width: 32px;
+    height: 32px;
+    background-image: url('./Images/Icons/camcore-icon.svg?v=2026-08-30-authenticated-header');
   }
 
   [class*='PageHeader-logo-'] {
