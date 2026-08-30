@@ -5,6 +5,14 @@
 >
 > A published `sha-*` tag identifies the source commit, but it is not by itself an immutable image reference while the build uses a mutable base. Record and verify the published image digest, and deploy by digest for an immutable reference; treat `latest` and `sha-*` as discovery labels. Reviewed source, a published image, a deployed image and a verified live service are separate states. Route product questions and reproducible upstream defects upstream after testing without CamCore customisation; CamCore operational support remains private. Never add credentials or private environment details to this public repository.
 
+<!-- CAMCORE-REPOSITORY-BRANDING:START -->
+<p align="center">
+  <a href="https://camcore.au">
+    <img src=".github/brand/camcore-repository-banner.svg" alt="CamCore" width="520">
+  </a>
+</p>
+<!-- CAMCORE-REPOSITORY-BRANDING:END -->
+
 # <img width="24px" src="./Logo/256.png" alt="Sonarr"></img> Sonarr
 
 [![Translated](https://translate.servarr.com/widget/servarr/sonarr/svg-badge.svg)](https://translate.servarr.com/engage/servarr/)
